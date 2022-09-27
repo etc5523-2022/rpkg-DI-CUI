@@ -10,11 +10,11 @@
 #'
 #'@examples
 #'# a map plot shows global alcohol consumption with total litres of pure alcohol in range (0,10)
-#'plot_litres(c(0,10))
+#'plotly_litres(c(0,10))
 #'
 #'
 #' @export
-plot_litres <- function(Litres){
+plotly_litres <- function(Litres){
 
 
    group <- lat <- long <- map_data <- region <- total_litres_of_pure_alcohol <- NULL
