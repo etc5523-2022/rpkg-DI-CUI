@@ -1,9 +1,9 @@
-Package: change-this-to-your-pkg-name
-Title: What the Package Does (One Line, Title Case)
+Package: asdata
+Title: Global alcohol consumption and servings distribution
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "your@email.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+    person("Di", "Cui", , "dcui0002@student.monash.edu", role = c("aut", "cre"))
+Description: The draft package gives a good overview of national alcohol consumption and the servings of beer, spiritr and wine, and makes it easy to compare alcohol consumption and servings from country to country, as well asto see the global development of alcohol.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Language: es
@@ -12,3 +12,10 @@ RoxygenNote: 7.2.1
 Depends: 
     R (>= 2.10)
 LazyData: true
+Imports: 
+    magrittr,
+    shiny,
+    readr,
+    ggplot2,
+    dplyr,
+    plotly

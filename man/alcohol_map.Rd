@@ -21,7 +21,6 @@ A data frame with 99338 rows and 10 variables.
 }
 \source{
 \url{https://github.com/rfordatascience/tidytuesday/blob/master/data/2018/2018-06-26/week13_alcohol_global.csv}
-
 \url{https://ggplot2.tidyverse.org}
 }
 \usage{
@@ -31,6 +30,12 @@ alcohol_map
 A dataset containing world map and alcohol consumption.
 }
 \details{
-
+The dataset is obtained via the following codes:\cr
+\code{library(tidyverse)}\cr
+\code{url <- 'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2018/2018-06-26/week13_alcohol_global.csv'}\cr
+\code{alcohol <- read_csv(url)}\cr
+\code{map <- map_data("world")}\cr
+\code{map$region <- gsub("Russia", "Russian Federation", map$region)}\cr
+\code{alcohol_map <- map \%>\% left_join(alcohol, by = c("region"= "country")) \%>\% rename(country = region)}\cr
 }
 \keyword{datasets}
