@@ -1,16 +1,17 @@
-#' @title Difference in global alcohol consumption and servings
+#' @title Difference between alcohol values and average
 #'
-#' @description This function calculates the country average alcohol consumption
-#' and servings, as well as the difference between the average and the country.
+#' @description function calculates the average alcohol consumption and servings of selected countries,
+#' as well as the difference between the alcohol consumption and servings of each country  and the average.
 #'
-#' @param name Vector.Vector of country names.
+#' @param name Character. Country name. Note: For Russia, using "Russian Federation".
 #'
 #' @param type Character. The type of alcohol value, one of "beer_servings",
 #'        "spirit_servings", "wine_servings" and "total_litres_of_pure_alcohol".
 #'
-#'@return A value. Mean of alcohol value of selected country.
+#'@return A list. A list of length 2.
+#'A Character. Mean of alcohol value of selected country.
 #'
-#'@return A data.frame. Difference alcohol value between country.
+#'A data.frame. Difference alcohol value between country in descending order of difference.
 #' \itemize{
 #'   \item \code{country} : Country name.
 #'   \item \code{diff} : Difference between alcohol value of country and average alcohol value of selected country.
@@ -20,7 +21,7 @@
 #'
 #'@examples
 #'# Average wine servings of China, Japan, France, Australia and USA,
-#'# a dataset of difference between wine_servings of each country with the average wine_servings.
+#'# data.frame of difference between wine_servings of each country with the average wine_servings.
 #'country <- c("China","Japan","France", "Australia","USA")
 #'calculate_country_alcohol(country, "wine_servings")
 #'
@@ -43,13 +44,12 @@ calculate_country_alcohol<-function(name, type){
     dplyr::filter(choose == type) %>%
     dplyr::mutate( diff = round(value - round(mean(value),2),2))
 
-  mean <- print(paste("mean:",round(mean(cal$value),2)))
+  mean <- paste("mean:",round(mean(cal$value),2))
 
   diff_table <- tidyr::pivot_wider(data = cal, names_from = choose, values_from = value) %>%
     dplyr::arrange(-diff)
 
-  mean
-  diff_table
+  return (list(mean, diff_table))
 }
 
 

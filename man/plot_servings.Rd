@@ -10,11 +10,14 @@ plot_servings(type)
 \item{type}{Character. The type of alcohol servings, one of "beer_servings",
 "spirit_servings" and "wine_servings".}
 }
+\value{
+A plot. Alcohol servings plot. The color grey means \code{NA}.
+}
 \description{
 This function maps global alcohol servings of beer, spirit and wine.
 }
 \examples{
-# maps global beer servings.
+# mapping global beer servings.
 plot_servings("beer_servings")
 
 }

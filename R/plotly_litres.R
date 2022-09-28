@@ -1,15 +1,15 @@
-#' @title Plot global alcohol consumption map
+#' @title Mapping global alcohol consumption
 #'
-#' @description This function plots global alcohol consumption map in a total litres of pure alcohol range.
+#' @description This function plots global alcohol consumption map in a total litres of pure alcohol range, and converts the plot to plotly object.
 #'
-#' @param Litres Vector. The total litres of pure alcohol shown in the graph is in this range.
-#' The total litres of pure alcohol worldwide ranges from _0_ to _14.4_ liters.
+#' @param Litres Vector. The range of total litres of pure alcohol.
+#' The total litres of pure alcohol ranges from _0_ to _14.4_ liters.
 #'
 #'
-#'@return A map plot. Global alcohol consumption map.
+#'@return A plotly object. Global alcohol consumption map.
 #'
 #'@examples
-#'# a map plot shows global alcohol consumption with total litres of pure alcohol in range (0,10)
+#'# Mapping global alcohol consumption with total litres of pure alcohol in range (0,10)
 #'plotly_litres(c(0,10))
 #'
 #'

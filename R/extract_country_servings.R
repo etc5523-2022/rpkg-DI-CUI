@@ -14,8 +14,8 @@
 #'@return A data.frame. Country servings.
 #' \itemize{
 #'   \item \code{country} : Country name.
-#'   \item \code{servings} : (Beer/Spirit/Wine) servings of the country.
 #'   \item \code{rank} : Ranking of the country's (beer/spirit/wine) servings.
+#'   \item \code{beer/spirit/wine servings} : (Beer/Spirit/Wine) servings of the country.
 #' }
 #'
 #'@examples
@@ -45,6 +45,8 @@ alcohol_servings <- alcohol_servings %>%
   dplyr::arrange(-servings) %>%
   dplyr::mutate(rank = rank(-servings, ties.method = "min", na.last = TRUE)) %>%
   tidyr::pivot_wider(names_from = alcohol, values_from = servings)
+
+return(alcohol_servings)
 
 }
 

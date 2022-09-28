@@ -1,0 +1,261 @@
+---
+title: "Guide to asdata"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{global_alcohol_consumption}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(asdata)
+```
+
+The alcohol data shows the beer, spirit and wine servings and total litres of pure alcohol by country. The data source is from Thomas Mock (2022). Tidy Tuesday: A weekly data project aimed at the R ecosystem [https://github.com/rfordatascience/tidytuesday](https://github.com/rfordatascience/tidytuesday). 
+
+This dataset contains 193 countries with their alcohol consumption and servings. More details about this dataset can be found by using `?asdata::alcohol`.
+
+In order to show global alcohol consumption and servings distribution, the alcohol data needs to be combined with worldwide map data. This dataset contains world map data and data in alcohol dataset. More details can be found by using `?asdata::alcohol_map`.
+
+
+This vignette shows how to use asdata pacakge to give a good overview of national alcohol consumption and the servings of beer, spiritr and wine, and to make it easy to compare alcohol consumption and servings from country to country, as well as to see the global development of alcohol.
+
+<br>
+
+# Plotting alcohol consumption and servings
+
+You could produce plot about global alcohol consumption and servings. There are two functions: `plotly_litres()` function and `plot_servings` function.
+
+
+## Mapping global alcohol consumption
+
+`plotly_litres()` function could plot global alcohol consumption map in a total litres of pure alcohol range, and convert the plot to plotly object automatically.  You could use this function to perform the alcohol consumption distribution.
+
+#### Arguments
+
+This function has $1$ argument, which is `Litres`.
+
+```{r echo=FALSE}
+tab <- data.frame(Argument = "`Litres`",
+                  Description = "The range of total litres of pure alcohol.")
+
+knitr::kable(tab)
+
+```
+
+You only need to input a range vector of total litres of pure alcohol, and this function would provide a plotly map to perform the alcohol consumption.
+
+_In asdata package, the max total litres of pure alcohol is 14.4_.
+
+#### Usage
+
+The `plotly_litres()` function can be used as below. You could to use an object to catch the return.
+
+```{r}
+# Mapping global alcohol consumption with total litres of pure alcohol in range (0,10)
+consumption <- plotly_litres(Litres = c(0,10))
+```
+
+
+### Returns
+
+The `plotly_litres()` function returns a plotly object, which is global alcohol consumption map.
+
+If you evaluate the `consumption`, you will get a global alcohol consumption map, and if you move mouse, you will see the region(country) name and total litres of pure alcohol in this region(country).
+
+```{r fig.width= 7}
+consumption
+```
+
+
+
+## Mapping global servings of beer, spirit and wine
+
+`plot_servings()` function maps global alcohol servings of beer, spirit and wine.
+
+### Arguments
+
+This function has $1$ argument: `type`, which is the type of alcohol servings, one of "beer_servings", "spirit_servings" and "wine_servings".
+
+```{r echo=FALSE}
+tab <- data.frame(Argument = "`type`",
+                  Description = "The type of alcohol servings")
+
+knitr::kable(tab)
+
+```
+You only need to input a character one of "beer_servings", "spirit_servings" and "wine_servings".
+
+### Usage
+
+The `plot_servings()` function can be used as below. You could to use an object to catch the return.
+
+```{r}
+# mapping global beer servings.
+beer_servings <- plot_servings(type = "beer_servings")
+
+```
+
+### Returns
+
+The `plot_servings()` function returns a plot. Alcohol servings plot, the color grey means `NA`.
+If you evaluate the `beer_servings`, you will get a global beer servings map. 
+
+```{r fig.width= 7}
+beer_servings
+```
+
+<br>
+
+# Data.frame about alcohol consumption and servings
+
+You could produce data.frame about alcohol consumption and servings by using `extract_country_servings()` function and `calculate_country_alcohol()` function.
+
+## Extract country servings
+
+`extract_country_servings()` function is used to obtain a list of countries in this alcohol servings range in descending order of this alcohol servings.
+
+
+### Arguments
+
+This function has $2$ argument: `range` (The range of alcohol servings) and  `type`(the type of alcohol servings, one of "beer_servings", "spirit_servings" and "wine_servings").
+
+```{r echo=FALSE}
+tab <- data.frame(Arguments = c("`range`","`type`"),
+                  Description = c("The alcohol servings is within this range","The type of alcohol servings"))
+
+knitr::kable(tab)
+
+```
+
+You need to input a range vector of alcohol servings, and a character of one of "beer_servings", "spirit_servings" and "wine_servings".
+
+_The max servings of beer is 376, the max servings of spirit is 438, and the max servings of wine is 370._
+
+
+### Usage
+
+The `extract_country_servings()` function can be used as below. You could to use an object to catch the return.
+
+```{r}
+# a dataset contains country with beer servings in range (0,100)
+country_servings <- extract_country_servings(range = c(0,100), type = "beer_servings")
+
+```
+
+### Returns
+
+The `extract_country_servings()` function returns a data.frame. 
+
+```{r echo=FALSE}
+tab <- data.frame(Variables = c("country", 
+                                "rank",
+                                "beer/spirit/wine servings" 
+                                ),
+                  Description = c("Country name",
+                                  "Ranking of the country's (beer/spirit/wine) servings",
+                                  "(Beer/Spirit/Wine) servings of the country"))
+
+knitr::kable(tab)
+
+```
+
+ 
+If you evaluate the `country_servings`, you will get data.frame about country whose beer servings in range (0,100). 
+
+You could use `head()` function to see the top 6 of the data.frame.
+```{r}
+head(country_servings)
+```
+
+<br>
+
+
+## Difference between alcohol values and average
+
+`calculate_country_alcohol()` function calculates the average alcohol consumption and servings of selected countries, as well as the difference between the alcohol consumption and servings of each country  and the average.
+
+### Arguments
+
+This function has $2$ argument: `name` and  `type`(he type of alcohol value, one of "beer_servings", "spirit_servings", "wine_servings" and "total_litres_of_pure_alcohol").
+
+```{r echo=FALSE}
+tab <- data.frame(Arguments = c("`name`","`type`"),
+                  Description = c("Country name","The type of alcohol value"))
+
+knitr::kable(tab)
+
+```
+
+You need to input country name, and a character of one of "beer_servings", "spirit_servings", "wine_servings" and "total_litres_of_pure_alcohol".
+
+_In asdata package, for Russia, using "Russian Federation"._
+
+
+### Usage
+
+The `calculate_country_alcohol()` function can be used as below. You could to use an object to catch the return.
+
+Combine with `extract_country_servings()` function:
+```{r}
+# calculate average beer servings of countries with beer servings in range (0,100)
+# data.frame of difference between beer servings of each country with the average beer servings.
+cal_beer <- calculate_country_alcohol(name = country_servings$country, type = "beer_servings")
+
+```
+
+
+Input country name you are interested in:
+```{r}
+# Average wine servings of China, Japan, France, Australia and USA
+# data.frame of difference between wine_servings of each country with the average wine_servings.
+country <- c("China","Japan","France", "Australia","USA")
+cal_wine <- calculate_country_alcohol(name = country, type = "wine_servings")
+
+```
+
+
+
+### Returns
+
+The `calculate_country_alcohol()` function returns a list. 
+
+A list of length 2:
+
+list[[1]]: A Character. Mean of alcohol value of selected country.
+
+list[[2]]: A data.frame. Difference alcohol value between country in descending order of difference.
+
+```{r echo=FALSE}
+tab <- data.frame(Variables = c("country","diff", "beer_servings / spirit_servings / wine_servings / total_litres_of_pure_alcohol"),
+                  Description = c("Country name","Difference between alcohol value of country and average alcohol value of selected country", "Value of beer_servings, spirit_servings, wine_servings or total_litres_of_pure_alcohol"))
+
+knitr::kable(tab)
+
+```
+
+
+If you evaluate the `cal_wine`, you will get a list contains mean of wine servings of China, Japan, France, Australia and USA and a data.frame of difference between wine servings of China, Japan, France, Australia and USA and the mean value.
+
+You could use `cal_wine[[1]]` to see the mean value.
+```{r}
+cal_wine[[1]]
+```
+
+
+You could use `cal_wine[[2]]` to see the data.frame.
+```{r}
+cal_wine[[2]]
+```
+
+
+
+
+

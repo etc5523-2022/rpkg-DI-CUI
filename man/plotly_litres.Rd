@@ -2,22 +2,22 @@
 % Please edit documentation in R/plotly_litres.R
 \name{plotly_litres}
 \alias{plotly_litres}
-\title{Plot global alcohol consumption map}
+\title{Mapping global alcohol consumption}
 \usage{
 plotly_litres(Litres)
 }
 \arguments{
-\item{Litres}{Vector. The total litres of pure alcohol shown in the graph is in this range.
-The total litres of pure alcohol worldwide ranges from \emph{0} to \emph{14.4} liters.}
+\item{Litres}{Vector. The range of total litres of pure alcohol.
+The total litres of pure alcohol ranges from \emph{0} to \emph{14.4} liters.}
 }
 \value{
-A map plot. Global alcohol consumption map.
+A plotly object. Global alcohol consumption map.
 }
 \description{
-This function plots global alcohol consumption map in a total litres of pure alcohol range.
+This function plots global alcohol consumption map in a total litres of pure alcohol range, and converts the plot to plotly object.
 }
 \examples{
-# a map plot shows global alcohol consumption with total litres of pure alcohol in range (0,10)
+# Mapping global alcohol consumption with total litres of pure alcohol in range (0,10)
 plotly_litres(c(0,10))
 
 

@@ -5,8 +5,10 @@
 #' @param type Character. The type of alcohol servings, one of "beer_servings",
 #'        "spirit_servings" and "wine_servings".
 #'
+#' @returns A plot. Alcohol servings plot. The color grey means `NA`.
+#'
 #' @examples
-#'# maps global beer servings.
+#'# mapping global beer servings.
 #'plot_servings("beer_servings")
 #'
 #' @export

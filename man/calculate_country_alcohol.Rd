@@ -2,20 +2,21 @@
 % Please edit documentation in R/calculate_country_alcohol.R
 \name{calculate_country_alcohol}
 \alias{calculate_country_alcohol}
-\title{Difference in global alcohol consumption and servings}
+\title{Difference between alcohol values and average}
 \usage{
 calculate_country_alcohol(name, type)
 }
 \arguments{
-\item{name}{Vector.Vector of country names.}
+\item{name}{Character. Country name. Note: For Russia, using "Russian Federation".}
 
 \item{type}{Character. The type of alcohol value, one of "beer_servings",
 "spirit_servings", "wine_servings" and "total_litres_of_pure_alcohol".}
 }
 \value{
-A value. Mean of alcohol value of selected country.
+A list. A list of length 2.
+A Character. Mean of alcohol value of selected country.
 
-A data.frame. Difference alcohol value between country.
+A data.frame. Difference alcohol value between country in descending order of difference.
 \itemize{
 \item \code{country} : Country name.
 \item \code{diff} : Difference between alcohol value of country and average alcohol value of selected country.
@@ -23,12 +24,12 @@ A data.frame. Difference alcohol value between country.
 }
 }
 \description{
-This function calculates the country average alcohol consumption
-and servings, as well as the difference between the average and the country.
+function calculates the average alcohol consumption and servings of selected countries,
+as well as the difference between the alcohol consumption and servings of each country  and the average.
 }
 \examples{
 # Average wine servings of China, Japan, France, Australia and USA,
-# a dataset of difference between wine_servings of each country with the average wine_servings.
+# data.frame of difference between wine_servings of each country with the average wine_servings.
 country <- c("China","Japan","France", "Australia","USA")
 calculate_country_alcohol(country, "wine_servings")
 

@@ -18,8 +18,8 @@ and the max servings of wine is \emph{370}.}
 A data.frame. Country servings.
 \itemize{
 \item \code{country} : Country name.
-\item \code{servings} : (Beer/Spirit/Wine) servings of the country.
 \item \code{rank} : Ranking of the country's (beer/spirit/wine) servings.
+\item \code{beer/spirit/wine servings} : (Beer/Spirit/Wine) servings of the country.
 }
 }
 \description{
