@@ -14,7 +14,7 @@
 #' @export
 plot_servings <- function(type){
 
-  alcohol <- beer_servings <- group <- lat <- long <- servings <- wine_servings <- NULL
+  alcohol <- beer_servings <- group <- lat <- long <- servings <- region <- wine_servings <- NULL
 
   `%>%` <- magrittr::`%>%`
 
@@ -29,7 +29,10 @@ plot_servings <- function(type){
   aes <- ggplot2::aes
 
  alcohol_servings %>%
-   ggplot2::ggplot( aes(x = long, y = lat, group = group))+
+   ggplot2::ggplot( aes(x = long, y = lat, group = group,
+                        text = sprintf("region: %s<br>servings: %s",
+                                       alcohol_servings$region,
+                                       alcohol_servings$servings)))+
    ggplot2::geom_polygon(data = map_data, aes(x = long, y = lat, group = group),
                    fill = "white", colour = "#252525")+
    ggplot2::geom_polygon( aes(fill = servings), color = "#252525")+

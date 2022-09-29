@@ -103,20 +103,31 @@ beer_servings <- plot_servings(type = "beer_servings")
 
 ```
 
+
+If you want to see the region(country) name and servings value, you could use `ggplotly()`
+function to convert plot to plotly object.
+```r
+# Not run
+library(plotly)
+plotly::ggplotly(beer_servings, tooltip = "text")
+
+```
+
+
 ### Returns
 
 The `plot_servings()` function returns a plot. Alcohol servings plot, the color grey means `NA`.
 If you evaluate the `beer_servings`, you will get a global beer servings map. 
 
-```{r fig.width= 7}
+```{r fig.width= 7, warning=FALSE}
 beer_servings
 ```
 
 <br>
 
-# Data.frame about alcohol consumption and servings
+# Specific numerical differences of alcohol consumption and servings by country
 
-You could produce data.frame about alcohol consumption and servings by using `extract_country_servings()` function and `calculate_country_alcohol()` function.
+You could see specific numerical differences about alcohol consumption and servings by using `extract_country_servings()` function and `calculate_country_alcohol()` function.
 
 ## Extract country servings
 
@@ -256,6 +267,31 @@ cal_wine[[2]]
 ```
 
 
+
+
+
+
+
+
+<br>
+
+# Alcohol consumption shiny app
+There is a `run_app()` function could run alcohol consumption shiny app.
+
+## Run shiny app
+
+`run_app()` function runs alcohol consumption shiny app.
+
+### Usage
+The `run_app()` function can be used as below.
+
+```r
+# Not run
+run_app()
+```
+
+### Returns
+The `run_app()` function returns a shiny app showing global alcohol consumption and servings, which could reflect the economy of country and reflect the alcoholism of people.
 
 
 

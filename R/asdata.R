@@ -1,8 +1,7 @@
 #' asdata: Global alcohol consumption and servings
 #'
-#' A package gives a good overview of national alcohol consumption and the servings of beer, spiritr and wine,
-#' and makes it easy to compare alcohol consumption and servings from country to country,
-#' as well as to see the global development of alcohol.
+#' A package gives a good overview of national alcohol consumption and the servings of beer, spirit and wine,
+#' and makes it easy to compare alcohol consumption and servings from country to country.
 #'
 #' @section Authors:
 #'
