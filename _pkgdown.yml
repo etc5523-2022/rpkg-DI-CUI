@@ -7,19 +7,19 @@ reference:
   desc: >
     Functions for visualizing global alcohol consumption and servings
 - contents:
-  - plotly_litres()
-  - plot_servings()
+  - plotly_litres
+  - plot_servings
 - title: Exploring Specific numerical differences
   desc: >
     Functions for seeing specific numerical differences of alcohol consumption and servings by country
 - contents:
-  - extract_country_servings()
-  - calculate_country_alcohol()
+  - extract_country_servings
+  - calculate_country_alcohol
 - title: Run shiny app
   desc: >
     Run global alcohol consumption shiny app
 - contents:
-  - run_app()
+  - run_app
 - title: Datasets
   desc: >
     Built-in datasets
