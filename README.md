@@ -43,7 +43,7 @@ Europe and Australia, the total litres of pure alcohol of most countries
 are less than 10.
 
 ``` r
-#Not run
+# Not run
 consumption <- plotly_litres(Litres = c(0,10))
 consumption
 ```
