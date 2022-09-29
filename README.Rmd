@@ -2,7 +2,8 @@
 output: 
   github_document
 always_allow_html: true
-
+editor_options: 
+  chunk_output_type: console
 ---
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
@@ -38,30 +39,41 @@ devtools::install_github("etc5523-2022/rpkg-DI-CUI")
 library(asdata)
 ```
 
+### Plotting alcohol comsumption and servings
+
 The below examples use the built-in dataset `alcohol_map`, you could produce plot about global alcohol consumption and servings. There are two functions: `plotly_litres()` function and `plot_servings` function.
 
 `plotly_litres()` function could plot global alcohol consumption map in a total litres of pure alcohol range, and convert the plot to plotly object automatically.  You could use this function to perform the alcohol consumption distribution.
 
 In this example, mapping global alcohol consumption with total litres of pure alcohol in the range (0,10), you could see that except for northern Europe and Australia, the total litres of pure alcohol of most countries are less than 10.
 
-```{r}
+```r
+#Not run
 consumption <- plotly_litres(Litres = c(0,10))
 consumption
 ```
+```{r echo=FALSE}
+knitr::include_graphics("./man/figures/plotly.png")
+```
+_Image: screenshot of consumption_
 
+<br>
 
 `plot_servings()` function maps global alcohol servings of beer, spirit and wine.
 
 In this example, mapping global beer servings. There are high beer servings in Europe.
 
-```{r}
+```{r warning=FALSE}
 beer_servings <- plot_servings(type = "beer_servings")
 beer_servings
 ```
 
 
 
-You could see specific numerical differences about alcohol consumption and servings by using `extract_country_servings()` function and `calculate_country_alcohol()` function.
+
+### Specific numerical differences of alcohol consumption and servings by country
+
+The below examples use the built-in dataset `alcohol`, you could see specific numerical differences about alcohol consumption and servings by using `extract_country_servings()` function and `calculate_country_alcohol()` function.
 
 `extract_country_servings()` function is used to obtain a list of countries in this alcohol servings range in descending order of this alcohol servings.
 
