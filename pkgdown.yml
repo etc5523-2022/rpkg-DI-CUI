@@ -1,0 +1,10 @@
+pandoc: 2.14.2
+pkgdown: 2.0.6
+pkgdown_sha: ~
+articles:
+  global_alcohol_consumption: global_alcohol_consumption.html
+last_built: 2022-09-29T07:53Z
+urls:
+  reference: https://etc5523-2022.github.io/rpkg-DI-CUI/reference
+  article: https://etc5523-2022.github.io/rpkg-DI-CUI/articles
+
