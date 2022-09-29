@@ -26,3 +26,9 @@ reference:
 - contents:
   - alcohol
   - alcohol_map
+- title: Package metadata
+  desc: >
+    Authors and functions
+- contents:
+  - asdata
+
