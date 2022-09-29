@@ -20,7 +20,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of asdata is to give a good overview of national alcohol consumption and servings of beer, spirit and wine,  and make it easy to compare alcohol consumption and servings from country to country.
+The goal of asdata is to give a good overview of national alcohol consumption and servings of beer, spirit and wine, and make it easy to compare alcohol consumption and servings from country to country.
 
 ## Installation
 
@@ -70,7 +70,7 @@ beer_servings
 
 
 
-### Specific numerical differences of alcohol consumption and servings by country
+### Exploring Specific numerical differences
 
 The below examples use the built-in dataset `alcohol`, you could see specific numerical differences about alcohol consumption and servings by using `extract_country_servings()` function and `calculate_country_alcohol()` function.
 

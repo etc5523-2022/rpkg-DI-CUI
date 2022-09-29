@@ -67,7 +67,7 @@ beer_servings
 
 <img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
 
-### Specific numerical differences of alcohol consumption and servings by country
+### Exploring Specific numerical differences
 
 The below examples use the built-in dataset `alcohol`, you could see
 specific numerical differences about alcohol consumption and servings by
