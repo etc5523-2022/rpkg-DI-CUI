@@ -7,7 +7,7 @@
 plotly_litres(Litres)
 }
 \arguments{
-\item{Litres}{Vector. The range of total litres of pure alcohol.
+\item{Litres}{Vector. The set range of total litres of pure alcohol.
 The total litres of pure alcohol ranges from \emph{0} to \emph{14.4} liters.}
 }
 \value{

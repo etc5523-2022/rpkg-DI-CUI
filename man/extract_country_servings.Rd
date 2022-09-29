@@ -7,7 +7,7 @@
 extract_country_servings(range, type)
 }
 \arguments{
-\item{range}{Vector. The alcohol servings is within this range.
+\item{range}{Vector. The set range of alcohol servings
 The max servings of beer is \emph{376}, the max servings of spirit is \emph{438},
 and the max servings of wine is \emph{370}.}
 
@@ -27,7 +27,7 @@ This function is used to obtain a list of countries in this
 alcohol servings range in descending order of this alcohol servings.
 }
 \examples{
-# a dataset contains country with beer servings in range (0,100)
+# countries with beer servings in the range (0,100)
 extract_country_servings(range = c(0,100), type = "beer_servings")
 
 
