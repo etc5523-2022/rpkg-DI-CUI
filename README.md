@@ -30,7 +30,8 @@ library(asdata)
 
 The below examples use the built-in dataset `alcohol_map`, you could
 produce plot about global alcohol consumption and servings. There are
-two functions: `plotly_litres()` function and `plot_servings` function.
+two functions: `plotly_litres()` function and `plot_servings()`
+function.
 
 `plotly_litres()` function could plot global alcohol consumption map in
 a total litres of pure alcohol range, and convert the plot to plotly
