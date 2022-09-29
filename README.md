@@ -67,7 +67,7 @@ beer_servings
 
 <img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
 
-### Exploring Specific numerical differences
+### Exploring specific numerical differences
 
 The below examples use the built-in dataset `alcohol`, you could see
 specific numerical differences about alcohol consumption and servings by
@@ -161,4 +161,13 @@ cal_wine[[2]]
 #> 3 USA         -54            84
 #> 4 Japan      -122            16
 #> 5 China      -130             8
+```
+
+### Run shiny app
+
+`run_app()` function could run global alcohol consumption shiny app.
+
+``` r
+# Not run
+run_app()
 ```

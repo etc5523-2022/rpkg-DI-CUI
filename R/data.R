@@ -5,7 +5,7 @@
 #' @format A data frame with 193 rows and 5 variables.
 #' \describe{
 #'   \item{country}{Country name}
-#'   \item{beer_servings}{beer servings of the country)}
+#'   \item{beer_servings}{beer servings of the country}
 #'   \item{spirit_servings}{spirit servings of the country}
 #'   \item{wine_servings}{wine servings of the country}
 #'   \item{total_litres_of_pure_alcohol}{the total (sum of recorded and unrecorded alcohol) amount of alcohol consumed per person (15 years of age or older) over a calendar year, in litres of pure alcohol, adjusted for tourist consumption. (The World Bank Group,2022)}

@@ -20,8 +20,8 @@
 #'
 #'
 #'@examples
-#'# Average wine servings of China, Japan, France, Australia and USA,
-#'# data.frame of difference between wine_servings of each country with the average wine_servings.
+#'# calculate average wine servings of China, Japan, France, Australia and USA,
+#'# Calculate difference between wine_servings of each country with the average wine_servings.
 #'country <- c("China","Japan","France", "Australia","USA")
 #'calculate_country_alcohol(country, "wine_servings")
 #'

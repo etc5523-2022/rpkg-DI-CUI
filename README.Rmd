@@ -70,7 +70,7 @@ beer_servings
 
 
 
-### Exploring Specific numerical differences
+### Exploring specific numerical differences
 
 The below examples use the built-in dataset `alcohol`, you could see specific numerical differences about alcohol consumption and servings by using `extract_country_servings()` function and `calculate_country_alcohol()` function.
 
@@ -119,4 +119,13 @@ You could use `cal_wine[[2]]` to see the data.frame.
 cal_wine[[2]]
 ```
 
+
+### Run shiny app
+
+`run_app()` function could run global alcohol consumption shiny app.
+
+```r
+# Not run
+run_app()
+```
 

@@ -2,7 +2,7 @@
 #'
 #' @description This function plots global alcohol consumption map in a total litres of pure alcohol range, and converts the plot to plotly object.
 #'
-#' @param Litres Vector. The range of total litres of pure alcohol.
+#' @param Litres Vector. The set range of total litres of pure alcohol.
 #' The total litres of pure alcohol ranges from _0_ to _14.4_ liters.
 #'
 #'

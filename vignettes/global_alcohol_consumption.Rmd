@@ -40,11 +40,11 @@ You could produce plot about global alcohol consumption and servings. There are 
 
 #### Arguments
 
-This function has $1$ argument, which is `Litres`.
+This function has 1 argument, which is `Litres`.
 
 ```{r echo=FALSE}
 tab <- data.frame(Argument = "`Litres`",
-                  Description = "The range of total litres of pure alcohol.")
+                  Description = "The set range of total litres of pure alcohol.")
 
 knitr::kable(tab)
 
@@ -82,7 +82,7 @@ consumption
 
 ### Arguments
 
-This function has $1$ argument: `type`, which is the type of alcohol servings, one of "beer_servings", "spirit_servings" and "wine_servings".
+This function has 1 argument: `type` (one of "beer_servings", "spirit_servings" and "wine_servings").
 
 ```{r echo=FALSE}
 tab <- data.frame(Argument = "`type`",
@@ -125,7 +125,7 @@ beer_servings
 
 <br>
 
-# Exploring Specific numerical differences
+# Exploring specific numerical differences
 
 You could see specific numerical differences about alcohol consumption and servings by using `extract_country_servings()` function and `calculate_country_alcohol()` function.
 
@@ -136,11 +136,11 @@ You could see specific numerical differences about alcohol consumption and servi
 
 ### Arguments
 
-This function has $2$ argument: `range` and  `type`(one of "beer_servings", "spirit_servings" and "wine_servings").
+This function has 2 arguments: `range` and  `type`(one of "beer_servings", "spirit_servings" and "wine_servings").
 
 ```{r echo=FALSE}
 tab <- data.frame(Arguments = c("`range`","`type`"),
-                  Description = c("The alcohol servings is within this range","The type of alcohol servings"))
+                  Description = c("The set range of alcohol servings","The type of alcohol servings"))
 
 knitr::kable(tab)
 
@@ -156,9 +156,8 @@ _The max servings of beer is 376, the max servings of spirit is 438, and the max
 The `extract_country_servings()` function can be used as below. You could to use an object to catch the return.
 
 ```{r}
-# a dataset contains country with beer servings in range (0,100)
+# countries with beer servings in range (0,100)
 country_servings <- extract_country_servings(range = c(0,100), type = "beer_servings")
-
 ```
 
 ### Returns
@@ -195,7 +194,7 @@ head(country_servings)
 
 ### Arguments
 
-This function has $2$ argument: `name` and  `type`(one of "beer_servings", "spirit_servings", "wine_servings" and "total_litres_of_pure_alcohol").
+This function has 2 arguments: `name` and  `type`(one of "beer_servings", "spirit_servings", "wine_servings" and "total_litres_of_pure_alcohol").
 
 ```{r echo=FALSE}
 tab <- data.frame(Arguments = c("`name`","`type`"),
@@ -217,7 +216,7 @@ The `calculate_country_alcohol()` function can be used as below. You could to us
 Combine with `extract_country_servings()` function:
 ```{r}
 # calculate average beer servings of countries with beer servings in range (0,100)
-# data.frame of difference between beer servings of each country with the average beer servings.
+# calculate difference between beer servings of each country with the average beer servings.
 cal_beer <- calculate_country_alcohol(name = country_servings$country, type = "beer_servings")
 
 ```
@@ -276,11 +275,11 @@ cal_wine[[2]]
 <br>
 
 # Alcohol consumption shiny app
-There is a `run_app()` function could run alcohol consumption shiny app.
+There is a `run_app()` function could run global alcohol consumption shiny app.
 
 ## Run shiny app
 
-`run_app()` function runs alcohol consumption shiny app.
+`run_app()` function runs global alcohol consumption shiny app.
 
 ### Usage
 The `run_app()` function can be used as below.

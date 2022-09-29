@@ -3,7 +3,7 @@
 #' @description This function is used to obtain a list of countries in this
 #' alcohol servings range in descending order of this alcohol servings.
 #'
-#' @param range Vector. The alcohol servings is within this range.
+#' @param range Vector. The set range of alcohol servings
 #' The max servings of beer is _376_, the max servings of spirit is _438_,
 #' and the max servings of wine is _370_.
 #'
@@ -19,7 +19,7 @@
 #' }
 #'
 #'@examples
-#'# a dataset contains country with beer servings in range (0,100)
+#'# countries with beer servings in the range (0,100)
 #'extract_country_servings(range = c(0,100), type = "beer_servings")
 #'
 #'
