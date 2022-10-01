@@ -117,19 +117,19 @@
 <p>You could use <code>cal_beer[[1]]</code> to see the mean value.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">cal_beer</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span></span>
-<span><span class="co">#&gt; [1] "mean: 33.33"</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] "global mean: 106.16 ;  mean: 33.33"</span></span></code></pre></div>
 <p>You could use <code>cal_beer[[2]]</code> to see the data.frame, showing the top 6 rows of the data.frame</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">cal_beer</span><span class="op">[[</span><span class="fl">2</span><span class="op">]</span><span class="op">]</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 6 x 3</span></span>
-<span><span class="co">#&gt;   country            diff beer_servings</span></span>
-<span><span class="co">#&gt;   &lt;chr&gt;             &lt;dbl&gt;         &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt; 1 Thailand           65.7            99</span></span>
-<span><span class="co">#&gt; 2 Mauritius          64.7            98</span></span>
-<span><span class="co">#&gt; 3 Cuba               59.7            93</span></span>
-<span><span class="co">#&gt; 4 Guyana             59.7            93</span></span>
-<span><span class="co">#&gt; 5 Equatorial Guinea  58.7            92</span></span>
-<span><span class="co">#&gt; 6 Swaziland          56.7            90</span></span></code></pre></div>
+<span><span class="co">#&gt; # A tibble: 6 x 4</span></span>
+<span><span class="co">#&gt;   country            diff global_diff beer_servings</span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;             &lt;dbl&gt;       &lt;dbl&gt;         &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1 Thailand           65.7       -7.16            99</span></span>
+<span><span class="co">#&gt; 2 Mauritius          64.7       -8.16            98</span></span>
+<span><span class="co">#&gt; 3 Cuba               59.7      -13.2             93</span></span>
+<span><span class="co">#&gt; 4 Guyana             59.7      -13.2             93</span></span>
+<span><span class="co">#&gt; 5 Equatorial Guinea  58.7      -14.2             92</span></span>
+<span><span class="co">#&gt; 6 Swaziland          56.7      -16.2             90</span></span></code></pre></div>
 <p>In this example, input a vector of country names to calculate the average wine servings of China, Japan, France, Australia and the USA, and to produce a data.frame to see the difference between wine servings in China, Japan, France, Australia and the USA with the average.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">country</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"China"</span>,<span class="st">"Japan"</span>,<span class="st">"France"</span>, <span class="st">"Australia"</span>,<span class="st">"USA"</span><span class="op">)</span></span>
@@ -137,18 +137,18 @@
 <p>You could use <code>cal_wine[[1]]</code> to see the mean value.</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">cal_wine</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span></span>
-<span><span class="co">#&gt; [1] "mean: 138"</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] "global mean: 49.45 ;  mean: 138"</span></span></code></pre></div>
 <p>You could use <code>cal_wine[[2]]</code> to see the data.frame.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">cal_wine</span><span class="op">[[</span><span class="fl">2</span><span class="op">]</span><span class="op">]</span></span>
-<span><span class="co">#&gt; # A tibble: 5 x 3</span></span>
-<span><span class="co">#&gt;   country    diff wine_servings</span></span>
-<span><span class="co">#&gt;   &lt;chr&gt;     &lt;dbl&gt;         &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt; 1 France      232           370</span></span>
-<span><span class="co">#&gt; 2 Australia    74           212</span></span>
-<span><span class="co">#&gt; 3 USA         -54            84</span></span>
-<span><span class="co">#&gt; 4 Japan      -122            16</span></span>
-<span><span class="co">#&gt; 5 China      -130             8</span></span></code></pre></div>
+<span><span class="co">#&gt; # A tibble: 5 x 4</span></span>
+<span><span class="co">#&gt;   country    diff global_diff wine_servings</span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;     &lt;dbl&gt;       &lt;dbl&gt;         &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1 France      232       321.            370</span></span>
+<span><span class="co">#&gt; 2 Australia    74       163.            212</span></span>
+<span><span class="co">#&gt; 3 USA         -54        34.6            84</span></span>
+<span><span class="co">#&gt; 4 Japan      -122       -33.4            16</span></span>
+<span><span class="co">#&gt; 5 China      -130       -41.4             8</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="run-shiny-app">Run shiny app<a class="anchor" aria-label="anchor" href="#run-shiny-app"></a>
