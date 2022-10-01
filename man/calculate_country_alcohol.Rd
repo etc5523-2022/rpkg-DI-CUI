@@ -14,12 +14,13 @@ calculate_country_alcohol(name, type)
 }
 \value{
 A list. A list of length 2.
-A Character. Mean of alcohol value of selected country.
+A Character. Mean of global alcohol value, and mean of alcohol value of selected country.
 
 A data.frame. Difference alcohol value between country in descending order of difference.
 \itemize{
 \item \code{country} : Country name.
 \item \code{diff} : Difference between alcohol value of country and average alcohol value of selected country.
+\item \code{global_diff} : Difference between alcohol value of selected country and average of global alcohol value.
 \item \code{beer_servings/ spirit_servings/ wine_servings/ total_litres_of_pure_alcohol} : value of beer_servings, spirit_servings, wine_servings or total_litres_of_pure_alcohol.
 }
 }

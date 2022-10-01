@@ -113,7 +113,7 @@ You could use `cal_beer[[1]]` to see the mean value.
 
 ``` r
 cal_beer[[1]]
-#> [1] "mean: 33.33"
+#> [1] "global mean: 106.16 ;  mean: 33.33"
 ```
 
 You could use `cal_beer[[2]]` to see the data.frame, showing the top 6
@@ -121,15 +121,15 @@ rows of the data.frame
 
 ``` r
 head(cal_beer[[2]])
-#> # A tibble: 6 x 3
-#>   country            diff beer_servings
-#>   <chr>             <dbl>         <dbl>
-#> 1 Thailand           65.7            99
-#> 2 Mauritius          64.7            98
-#> 3 Cuba               59.7            93
-#> 4 Guyana             59.7            93
-#> 5 Equatorial Guinea  58.7            92
-#> 6 Swaziland          56.7            90
+#> # A tibble: 6 x 4
+#>   country            diff global_diff beer_servings
+#>   <chr>             <dbl>       <dbl>         <dbl>
+#> 1 Thailand           65.7       -7.16            99
+#> 2 Mauritius          64.7       -8.16            98
+#> 3 Cuba               59.7      -13.2             93
+#> 4 Guyana             59.7      -13.2             93
+#> 5 Equatorial Guinea  58.7      -14.2             92
+#> 6 Swaziland          56.7      -16.2             90
 ```
 
 In this example, input a vector of country names to calculate the
@@ -146,21 +146,21 @@ You could use `cal_wine[[1]]` to see the mean value.
 
 ``` r
 cal_wine[[1]]
-#> [1] "mean: 138"
+#> [1] "global mean: 49.45 ;  mean: 138"
 ```
 
 You could use `cal_wine[[2]]` to see the data.frame.
 
 ``` r
 cal_wine[[2]]
-#> # A tibble: 5 x 3
-#>   country    diff wine_servings
-#>   <chr>     <dbl>         <dbl>
-#> 1 France      232           370
-#> 2 Australia    74           212
-#> 3 USA         -54            84
-#> 4 Japan      -122            16
-#> 5 China      -130             8
+#> # A tibble: 5 x 4
+#>   country    diff global_diff wine_servings
+#>   <chr>     <dbl>       <dbl>         <dbl>
+#> 1 France      232       321.            370
+#> 2 Australia    74       163.            212
+#> 3 USA         -54        34.6            84
+#> 4 Japan      -122       -33.4            16
+#> 5 China      -130       -41.4             8
 ```
 
 ### Run shiny app

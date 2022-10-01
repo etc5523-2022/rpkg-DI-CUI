@@ -1,0 +1,213 @@
+---
+title: "asdata Package"
+author: "Di Cui"
+format: revealjs
+editor: visual
+execute: 
+  echo: true
+---
+
+------------------------------------------------------------------------
+
+## asdata Package
+
+::: incremental
+-   The asdata Package is to give a good overview of national alcohol consumption and servings of beer, spirit and wine, and make it easy to compare alcohol consumption and servings from country to country.
+
+-   The goal of asdata Package is to :
+
+    ✏️ Plotting alcohol consumption and servings
+
+    📚 Exploring specific numerical differences
+
+    🔄 Running global alcohol consumption shiny app
+:::
+
+------------------------------------------------------------------------
+
+## Installation
+
+You can install the development version of asdata from [GitHub](https://github.com/) with:
+
+::: {.nonincremental style="background-color: #f0f0f0; padding: 10px"}
+```{r}
+#| eval: false
+# install.packages("devtools")
+
+devtools::install_github("etc5523-2022/rpkg-DI-CUI")
+```
+
+<br>
+
+```{r}
+# load asdata package
+
+library(asdata)
+```
+:::
+
+------------------------------------------------------------------------
+
+## Built-in dataset
+
+::: incremental
+1.  **alcohol :** Contains **193** countries with their alcohol consumption and servings. `?asdata::alcohol`
+:::
+
+::: incremental
+::: {.function style="font-size: 20pt"}
+-   🌎**country**: country name
+
+-   🍺**beer_servings**: beer servings
+
+-   🥂**spirit_servings**: spirit servings
+
+-   🍷 **wine_servings**: wine servings
+
+-   🧍 **total_litres_of_pure_alcohol**: the total amount of alcohol consumed per person over a calendar year, in litres of pure alcohol, adjusted for tourist consumption. (The World Bank Group,2022)
+:::
+:::
+
+::: incremental
+2.  **alcohol_map:** Combine alcohol dataset with worldwide map data. This dataset contains world map data and data in alcohol dataset. `?asdata::alcohol_map`
+:::
+
+------------------------------------------------------------------------
+
+## Function
+
+::: {.function style="background-color: #f0f0f0; padding: 10px;"}
+-   🗺️**plotly_litres()**: Mapping global alcohol consumption
+
+-   🗺️**plot_servings()**: Mapping global servings of beer, spirit and wine
+
+-   📏**extract_country_servings()**: Extract country servings
+
+-   📏**calculate_country_alcohol()**: Difference between alcohol values and the average
+
+-   🔄**run_app()**: Run global alcohol consumption shiny app
+:::
+
+------------------------------------------------------------------------
+
+### **plotly_litres(Litres)**
+
+If you want to map global alcohol consumption with total litres of pure alcohol in the range (0,10)
+
+::: {.code style="background-color: #f0f0f0; padding: 10px;"}
+```{r}
+
+plotly_litres(Litres = c(0,10))
+
+```
+:::
+
+------------------------------------------------------------------------
+
+### plot_servings(type)
+
+If you want to map global beer servings.
+
+::: {.code style="background-color: #f0f0f0; padding: 10px;"}
+```{r}
+
+plot_servings(type = "beer_servings")
+
+```
+:::
+
+------------------------------------------------------------------------
+
+### extract_country_servings(range, type)
+
+If you want to see countries with beer servings in the range (5,25) and sorted in descending order.
+
+::: {.code style="background-color: #f0f0f0; padding: 10px;"}
+```{r}
+
+extract_country_servings(range = c(5,25),
+                         type = "beer_servings")
+
+```
+:::
+
+------------------------------------------------------------------------
+
+### calculate_country_alcohol(name, type)
+
+If you want to calculate average and difference in specific servings range.
+
+::: {.code style="background-color: #f0f0f0; padding: 10px;"}
+```{r}
+# Combine with `extract_country_servings()` function
+
+cal_range_beer <- calculate_country_alcohol(
+  name = extract_country_servings(range = c(5,25), 
+                                  type = "beer_servings")$country, 
+  type = "beer_servings") 
+```
+:::
+
+::: columns
+::: {.column width="40%"}
+```{r}
+# show mean
+cal_range_beer[[1]] 
+```
+:::
+
+::: {.column width="60%"}
+```{r}
+# show diff of top 6 rows
+head(cal_range_beer[[2]]) 
+```
+:::
+:::
+
+------------------------------------------------------------------------
+
+### calculate_country_alcohol(name, type)
+
+If you want to calculate average and difference in specific region.
+
+::: {style="background-color: #f0f0f0; padding: 10px;"}
+```{r}
+country <- c("China","Japan","France", "Australia","USA")
+cal_region_wine <- calculate_country_alcohol(name = country, 
+                                             type = "wine_servings")
+```
+:::
+
+::: columns
+::: {.column width="40%"}
+```{r}
+# show mean
+cal_region_wine[[1]]
+```
+:::
+
+::: {.column width="60%"}
+```{r}
+# show difference
+cal_region_wine[[2]]
+```
+:::
+:::
+
+------------------------------------------------------------------------
+
+### run_app()
+
+If you want to run global alcohol shiny app.
+
+::: {.code style="background-color: #f0f0f0; padding: 10px;"}
+```{r eval = FALSE}
+run_app()
+```
+:::
+
+![](images/4ebb9c130de9b27ee406f9f3a4bfe0b.png){fig-align="center"}
+
+------------------------------------------------------------------------
+
+# **Thank you**😊

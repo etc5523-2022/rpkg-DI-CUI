@@ -239,20 +239,23 @@ The `calculate_country_alcohol()` function returns a list.
 
 A list of length 2:
 
-list[[1]]: A Character. Mean of alcohol value of selected country.
+list[[1]]: A Character. Mean of global alcohol value, and mean of alcohol value of selected country.
 
 list[[2]]: A data.frame. Difference alcohol value between country in descending order of difference.
 
 ```{r echo=FALSE}
-tab <- data.frame(Variables = c("country","diff", "beer_servings / spirit_servings / wine_servings / total_litres_of_pure_alcohol"),
-                  Description = c("Country name","Difference between alcohol value of country and average alcohol value of selected country", "Value of beer_servings, spirit_servings, wine_servings or total_litres_of_pure_alcohol"))
+tab <- data.frame(Variables = c("country","diff", "global_diff", "beer_servings / spirit_servings / wine_servings / total_litres_of_pure_alcohol"),
+                  Description = c("Country name",
+                                  "Difference between alcohol value of country and average alcohol value of selected country",
+                                  "Difference between alcohol value of selected country and average of global alcohol value", 
+                                  "Value of beer_servings, spirit_servings, wine_servings or total_litres_of_pure_alcohol"))
 
 knitr::kable(tab)
 
 ```
 
 
-If you evaluate the `cal_wine`, you will get a list contains mean of wine servings of China, Japan, France, Australia and USA and a data.frame of difference between wine servings of China, Japan, France, Australia and USA and the mean value.
+If you evaluate the `cal_wine`, you will get a list contains mean of global wine servings, mean of wine servings of China, Japan, France, Australia and USA, and a data.frame of difference between wine servings of China, Japan, France, Australia and USA and mean values.
 
 You could use `cal_wine[[1]]` to see the mean value.
 ```{r}
