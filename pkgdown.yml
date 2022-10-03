@@ -3,7 +3,7 @@ pkgdown: 2.0.6
 pkgdown_sha: ~
 articles:
   global_alcohol_consumption: global_alcohol_consumption.html
-last_built: 2022-10-01T04:55Z
+last_built: 2022-10-03T09:18Z
 urls:
   reference: https://etc5523-2022.github.io/rpkg-DI-CUI/reference
   article: https://etc5523-2022.github.io/rpkg-DI-CUI/articles
