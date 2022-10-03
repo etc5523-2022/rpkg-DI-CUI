@@ -31,7 +31,7 @@ This vignette shows how to use asdata pacakge to give a good overview of nationa
 
 # Plotting alcohol consumption and servings
 
-You could produce plot about global alcohol consumption and servings. There are two functions: `plotly_litres()` function and `plot_servings` function.
+You could produce plot about global alcohol consumption and servings. There are two functions: `plotly_litres()` function and `plot_servings()` function.
 
 
 ## Mapping global alcohol consumption
