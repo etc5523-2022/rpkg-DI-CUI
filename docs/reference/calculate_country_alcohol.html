@@ -70,11 +70,12 @@ as well as the difference between the alcohol consumption and servings of each c
     
 
 <p>A list. A list of length 2.
-A Character. Mean of alcohol value of selected country.</p>
+A Character. Mean of global alcohol value, and mean of alcohol value of selected country.</p>
 
 
 <p>A data.frame. Difference alcohol value between country in descending order of difference.</p><ul><li><p><code>country</code> : Country name.</p></li>
 <li><p><code>diff</code> : Difference between alcohol value of country and average alcohol value of selected country.</p></li>
+<li><p><code>global_diff</code> : Difference between alcohol value of selected country and average of global alcohol value.</p></li>
 <li><p><code>beer_servings/ spirit_servings/ wine_servings/ total_litres_of_pure_alcohol</code> : value of beer_servings, spirit_servings, wine_servings or total_litres_of_pure_alcohol.</p></li>
 </ul></div>
 
@@ -85,17 +86,17 @@ A Character. Mean of alcohol value of selected country.</p>
 <span class="r-in"><span><span class="va">country</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"China"</span>,<span class="st">"Japan"</span>,<span class="st">"France"</span>, <span class="st">"Australia"</span>,<span class="st">"USA"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">calculate_country_alcohol</span><span class="op">(</span><span class="va">country</span>, <span class="st">"wine_servings"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "mean: 138"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "global mean: 49.45 ;  mean: 138"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5 x 3</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   country    diff wine_servings</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> France      232           370</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> Australia    74           212</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> USA         -<span style="color: #BB0000;">54</span>            84</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> Japan      -<span style="color: #BB0000;">122</span>            16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> China      -<span style="color: #BB0000;">130</span>             8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5 x 4</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   country    diff global_diff wine_servings</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> France      232       321.            370</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> Australia    74       163.            212</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> USA         -<span style="color: #BB0000;">54</span>        34.6            84</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> Japan      -<span style="color: #BB0000;">122</span>       -<span style="color: #BB0000;">33.4</span>            16</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> China      -<span style="color: #BB0000;">130</span>       -<span style="color: #BB0000;">41.4</span>             8</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span></span></span>
